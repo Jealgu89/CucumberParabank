@@ -1,22 +1,36 @@
 package pages;
 
+import managers.PageObjectManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 
 public class HomePage {
 
     private WebDriver driver;
+    private SideBar sideBar;
     final By registrationLink = By.cssSelector("#loginPanel > p:nth-child(3) > a");
-    final By errorTitle = By.cssSelector("#rightPanel > h1");
-    final By errorReason = By.cssSelector("#rightPanel > p");
+    final By errorTextField = By.cssSelector("#rightPanel > p");
+    final By userNameField = By.name("username");
+    final By passwordField = By.name("password");
 
 
 
-    public HomePage(WebDriver driver) {this.driver = driver;}
 
-  
+        public HomePage(WebDriver driver) {
+            this.driver = driver;
+        this.sideBar = new SideBar(driver);
+        }
 
 
+    public void logIn(String userName, String password){
+
+
+            driver.findElement(userNameField).sendKeys(userName);
+            driver.findElement(passwordField).sendKeys(password);
+            driver.findElement(userNameField).submit();
+
+    }
 
 
     public RegistrationPage clickRegistration(){
@@ -25,10 +39,15 @@ public class HomePage {
         return new RegistrationPage(driver);
     }
 
-    public String[] getLoginErrorMessage() {
-       String errorTitleText = driver.findElement(errorTitle).getText();
-       String errorReasonText = driver.findElement(errorReason).getText();
-       return new String[] {errorTitleText, errorReasonText};
+    public OpenNewAccountPage openNewAccount(){
+           return sideBar.clickOpenNewAccount();
+    }
+
+
+
+    public String getLoginErrorMessage() {
+
+        return driver.findElement(errorTextField).getText();
 
 
     }

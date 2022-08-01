@@ -7,7 +7,7 @@ Feature: Registration
       Given User has navigated to the register page
       When  User enters valid personal information to register
 #   | firstName | lastName | street | city | state | zipCode | phoneNumber | ssn | userName | password | repeatedPassword
-    | Jesse | The Tester | Street | City | State | 12345 | 12345 | 12345 | testUser1 | password | password |
+    | Jesse | The Tester | Street | City | State | 12345 | 12345 | 12345 | testUser12 | password | password |
 
     Then  I should be taken to the accounts overview page for newly created account
 #customer\.phoneNumber

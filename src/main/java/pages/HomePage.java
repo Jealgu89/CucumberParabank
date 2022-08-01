@@ -23,13 +23,18 @@ public class HomePage {
         }
 
 
-    public void logIn(String userName, String password){
+    public void logIn(String userName, String password) throws InterruptedException {
 
 
             driver.findElement(userNameField).sendKeys(userName);
             driver.findElement(passwordField).sendKeys(password);
             driver.findElement(userNameField).submit();
 
+    }
+
+    public void navigateToOpenNewAccountPage() {
+
+            sideBar.clickOpenNewAccount();
     }
 
 

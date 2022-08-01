@@ -25,7 +25,7 @@ public class TestContext {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(), TimeUnit.SECONDS);
         pageObjectManager = new PageObjectManager(driver);
-
+        driver.get("http://parabank.parasoft.com/parabank/index.htm");
 
 
     }
@@ -34,6 +34,10 @@ public class TestContext {
     public PageObjectManager getPageObjectManager() {
 
             return pageObjectManager;
+        }
+
+        public WebDriver getDriver(){
+        return driver;
         }
 
     }

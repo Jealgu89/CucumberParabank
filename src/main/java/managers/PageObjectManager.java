@@ -14,13 +14,15 @@ public class PageObjectManager {
 
     private HomePage homePage;
 
-    private NewAccountOpenedPage newAccountOpenedPage;
+    private NewUserAccountOpenedPage newUserAccountOpenedPage;
 
     private OpenNewAccountPage openNewAccountPage;
 
     private RegistrationPage registrationPage;
 
     private AccountsOverviewPage accountsOverviewPage;
+
+    private NewAccountOpenedPage newAccountOpenedPage;
 
 
     public PageObjectManager(WebDriver driver) {
@@ -37,11 +39,14 @@ public class PageObjectManager {
     }
 
 
-
-
-    public NewAccountOpenedPage getNewAccountOpenedPage() {
+    public NewAccountOpenedPage getNewAccountOpenedPage(){
 
         return (newAccountOpenedPage == null) ? newAccountOpenedPage = new NewAccountOpenedPage(driver) : newAccountOpenedPage;
+    }
+
+    public NewUserAccountOpenedPage getNewUserAccountOpenedPage() {
+
+        return (newUserAccountOpenedPage == null) ? newUserAccountOpenedPage = new NewUserAccountOpenedPage(driver) : newUserAccountOpenedPage;
     }
 
     public OpenNewAccountPage getOpenNewAccountPage() {

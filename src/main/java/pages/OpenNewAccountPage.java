@@ -29,9 +29,9 @@ public class OpenNewAccountPage {
 
 
         // change to datatupe account openened page
-    public NewAccountOpenedPage clickOpenNewAccount() {
+    public NewUserAccountOpenedPage clickOpenNewAccount() {
         driver.findElement(openNewAccountButton).click();
-        return new NewAccountOpenedPage(driver);
+        return new NewUserAccountOpenedPage(driver);
 
     }
 

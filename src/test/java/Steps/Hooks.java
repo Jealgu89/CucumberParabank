@@ -1,8 +1,7 @@
-package ParaBank;
+package Steps;
 
 import context.TestContext;
 import dataProviders.ConfigFileReader;
-import io.cucumber.java.en.Given;
 import managers.PageObjectManager;
 import org.openqa.selenium.WebDriver;
 

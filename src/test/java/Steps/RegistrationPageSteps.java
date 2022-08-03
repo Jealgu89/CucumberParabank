@@ -1,12 +1,12 @@
-package ParaBank;
+package Steps;
 
 import context.TestContext;
 import dataProviders.ConfigFileReader;
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import managers.PageObjectManager;
 import org.openqa.selenium.WebDriver;
-import pages.HomePage;
 import pages.RegistrationPage;
 
 import java.util.List;
@@ -46,6 +46,7 @@ public class RegistrationPageSteps {
 
 
     }
+
 
 
 

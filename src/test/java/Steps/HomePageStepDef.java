@@ -1,4 +1,4 @@
-package ParaBank;
+package Steps;
 
 import context.TestContext;
 import dataProviders.ConfigFileReader;
@@ -8,7 +8,6 @@ import io.cucumber.java.en.When;
 import managers.PageObjectManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 
 
@@ -46,10 +45,10 @@ public class HomePageStepDef {
 
     }
 
-    @Given("User has navigated to the register page")
+    @Given("User has navigated to the registration page")
     public void iAmOnTheRegisterPageOfTheParaBankApplication() {
 
-        i_am_on_the_login_page_of_the_para_bank_application();
+
         //driver.findElement(By.cssSelector("#loginPanel > p:nth-child(3) > a")).click();
         //homePage = pageObjectManager.getHomePage();
         homePage.clickRegistration();

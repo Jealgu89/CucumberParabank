@@ -3,16 +3,23 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class NewUserAccountOpenedPage {
 
     private WebDriver driver;
 
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"rightPanel\"]/p")
+    private WebElement welcomeText;
 
-    private By welcomeText = By.xpath("//*[@id=\"rightPanel\"]/p");
 
-    public NewUserAccountOpenedPage(WebDriver driver) {this.driver=driver;}
+
+    public NewUserAccountOpenedPage(WebDriver driver) {
+        this.driver=driver;
+        PageFactory.initElements(driver, this);}
 
 
 
@@ -21,7 +28,7 @@ public class NewUserAccountOpenedPage {
 
     public String welcomeText() {
 
-        return driver.findElement(welcomeText).getText();
+        return welcomeText.getText();
     }
 
 

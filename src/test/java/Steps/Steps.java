@@ -1,9 +1,7 @@
-package ParaBank;
+package Steps;
 
 import context.TestContext;
 import dataProviders.ConfigFileReader;
-import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import pages.*;

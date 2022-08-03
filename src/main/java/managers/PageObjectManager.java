@@ -24,6 +24,8 @@ public class PageObjectManager {
 
     private NewAccountOpenedPage newAccountOpenedPage;
 
+    private AccountDetailsPage accountDetailsPage;
+
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -60,7 +62,11 @@ public class PageObjectManager {
 
     }
 
+    public AccountDetailsPage accountDetailsPage() {
 
+        return (accountDetailsPage == null) ? accountDetailsPage = new AccountDetailsPage(driver) : accountDetailsPage;
+
+    }
 
 
 

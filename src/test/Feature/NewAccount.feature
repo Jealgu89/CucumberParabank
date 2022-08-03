@@ -12,8 +12,8 @@ Feature: Create a new account
     Then User is on page stating that account is created with link to account
     Examples:
       | account type | account index | username | password |
-      | CHECKING    | 0| testUser12  | password |
-      | SAVINGS     | 0| testUser12 | password |
+      | CHECKING    | 0 | testUser12  | password |
+      | SAVINGS     | 0 | testUser12 | password |
 
 
 

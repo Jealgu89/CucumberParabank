@@ -1,4 +1,4 @@
-package ParaBank;
+package Steps;
 
 import context.TestContext;
 import dataProviders.ConfigFileReader;

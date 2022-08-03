@@ -2,95 +2,128 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
 
     private  WebDriver driver;
-    private By firstNameField = By.name("customer.firstName");
-    private By lastNameField = By.name("customer.lastName");
-    private By streetField = By.name("customer.address.street");
-    private By cityField = By.name("customer.address.city");
-    private By stateField = By.name("customer.address.state");
-    private By zipCodeField = By.name("customer.address.zipCode");
-    private By phoneNumberField = By.name("customer.phoneNumber");
-    private By ssnField = By.name("customer.ssn");
-    private By usernameField = By.name("customer.username");
-    private By passwordField = By.name("customer.password");
-    private By repeatPasswordField = By.name("repeatedPassword");
-    private By registrationButton = By.cssSelector("#customerForm > table > tbody > tr:nth-child(13) > td:nth-child(2) > input");
+    @FindBy(how = How.NAME, using = "customer.firstName")
+    private WebElement firstNameField;
+
+    @FindBy(how = How.NAME, using = "customer.lastName")
+    private WebElement lastNameField;
+
+    @FindBy(how = How.NAME, using = "customer.address.street")
+    private WebElement streetField;
+
+    @FindBy(how = How.NAME, using = "customer.address.city")
+    private WebElement cityField;
+
+    @FindBy(how = How.NAME, using = "customer.address.state")
+    private WebElement stateField;
+
+    @FindBy(how = How.NAME, using = "customer.address.zipCode")
+    private WebElement zipCodeField;
+
+    @FindBy(how = How.NAME, using = "customer.phoneNumber")
+    private WebElement phoneNumberField;
+
+    @FindBy(how = How.NAME, using = "customer.ssn")
+    private WebElement ssnField;
+
+   @FindBy(how = How.NAME, using = "customer.username")
+   private WebElement userNameField;
+
+   @FindBy(how = How.NAME, using = "customer.password")
+   private WebElement passwordField;
+
+   @FindBy(how = How.NAME, using = "repeatedPassword")
+   private WebElement repeatedPasswordField;
+
+   @FindBy(how = How.CSS, using = "#customerForm > table > tbody > tr:nth-child(13) > td:nth-child(2) > input")
+   private WebElement registrationButtonField;
 
 
 
-    public RegistrationPage(WebDriver driver) {this.driver = driver;}
+
+
+
+    public RegistrationPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);}
 
 
     public void registerFirstName(String firstName) {
-        driver.findElement(firstNameField).sendKeys(firstName);
+       firstNameField.sendKeys(firstName);
 
     }
 
     public void registerLastName(String lastName) {
-        driver.findElement(lastNameField).sendKeys(lastName);
+        lastNameField.sendKeys(lastName);
 
     }
 
 
     public void registerStreet(String street) {
-        driver.findElement(streetField).sendKeys(street);
+        streetField.sendKeys(street);
 
     }
 
 
     public void registerCity(String city) {
-        driver.findElement(cityField).sendKeys(city);
+        cityField.sendKeys(city);
 
     }
 
 
     public void registerState(String state) {
-        driver.findElement(stateField).sendKeys(state);
+        stateField.sendKeys(state);
+
 
     }
 
 
     public void registerZipCode(String zipCode) {
-        driver.findElement(zipCodeField).sendKeys(zipCode);
+        zipCodeField.sendKeys(zipCode);
 
     }
 
 
     public void registerPhoneNumber(String phoneNumber) {
-        driver.findElement(phoneNumberField).sendKeys(phoneNumber);
+        phoneNumberField.sendKeys(phoneNumber);
 
     }
 
 
     public void registerSSN(String ssn) {
-        driver.findElement(ssnField).sendKeys(ssn);
+        ssnField.sendKeys(ssn);
 
     }
 
 
     public void registerUsername(String userName) {
-        driver.findElement(usernameField).sendKeys(userName);
+        userNameField.sendKeys(userName);
 
     }
 
 
     public void registerPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
+        passwordField.sendKeys(password);
 
     }
 
 
     public void registerRepeatedPassword(String repeatedPassWord) {
-        driver.findElement(repeatPasswordField).sendKeys(repeatedPassWord);
+        repeatedPasswordField.sendKeys(repeatedPassWord);
 
     }
 
     public void clickToRegister() {
 
-        driver.findElement(registrationButton).click();
+        registrationButtonField.click();
 
     }
 

@@ -1,4 +1,4 @@
-package ParaBank;
+package Steps;
 
 import context.TestContext;
 import dataProviders.ConfigFileReader;
@@ -7,7 +7,6 @@ import managers.PageObjectManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.NewAccountOpenedPage;
-import pages.NewUserAccountOpenedPage;
 
 public class NewAccountOpenedPageSteps {
 

@@ -14,7 +14,7 @@ public class AccountDetailsPage {
     @FindBy(how = How.ID, using = "accountId")
     private WebElement accountNo;
 
-    @FindBy(how = How.CSS, using = "#balance")
+    @FindBy(how = How.CSS, using = "td#balance")
     private WebElement balance;
 
 
@@ -29,13 +29,15 @@ public class AccountDetailsPage {
 
     public String getAccountNo() {
 
+
+
     return accountNo.getText();
 
     }
 
-    public String getBalance () {
+    public String getBalance () throws InterruptedException {
 
-        System.out.println("Balance" + balance.getText());
+
       return balance.getText();
     }
 
@@ -43,12 +45,5 @@ public class AccountDetailsPage {
 
         sideBar.payBillPage();
     }
-
-
-
-
-
-
-
 
 }

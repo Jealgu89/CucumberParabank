@@ -13,9 +13,7 @@ import pages.HomePage;
 
 public class HomePageStepDef {
 
-    WebDriver driver;
-    ConfigFileReader configFileReader;
-    PageObjectManager pageObjectManager;
+
     HomePage homePage;
     TestContext testContext;
 

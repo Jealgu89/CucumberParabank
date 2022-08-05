@@ -26,6 +26,8 @@ public class PageObjectManager {
 
     private AccountDetailsPage accountDetailsPage;
 
+    private PayBillPage payBillPage;
+
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -62,10 +64,15 @@ public class PageObjectManager {
 
     }
 
-    public AccountDetailsPage accountDetailsPage() {
+    public AccountDetailsPage getAccountDetailsPage() {
 
         return (accountDetailsPage == null) ? accountDetailsPage = new AccountDetailsPage(driver) : accountDetailsPage;
 
+    }
+
+    public PayBillPage getPayBillPage(){
+
+        return (payBillPage == null) ? payBillPage = new PayBillPage(driver) : payBillPage;
     }
 
 

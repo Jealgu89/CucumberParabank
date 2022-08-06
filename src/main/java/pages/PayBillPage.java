@@ -139,10 +139,10 @@ public class PayBillPage {
 
         this.amount = Double.parseDouble(data.get(0).get(8));
 
-
-
-
     }
+
+
+
 
 
 

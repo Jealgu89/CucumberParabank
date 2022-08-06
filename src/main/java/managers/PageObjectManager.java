@@ -28,6 +28,8 @@ public class PageObjectManager {
 
     private PayBillPage payBillPage;
 
+    private BillPaymentCompletePage billPaymentCompletePage;
+
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -75,6 +77,11 @@ public class PageObjectManager {
         return (payBillPage == null) ? payBillPage = new PayBillPage(driver) : payBillPage;
     }
 
+    public BillPaymentCompletePage getBillPaymentCompletePage(){
+
+        return (billPaymentCompletePage == null) ? billPaymentCompletePage = new BillPaymentCompletePage(driver) : billPaymentCompletePage;
+
+    }
 
 
 }

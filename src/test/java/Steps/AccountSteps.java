@@ -1,6 +1,7 @@
 package Steps;
 
 import context.TestContext;
+import enums.Context;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,10 +38,12 @@ public class AccountSteps {
         Thread.sleep(1000);
         System.out.println(accountDetailsPage.getBalance());
 
-        this.balance = Double.parseDouble(accountDetailsPage.getBalance().substring(1));
+        Double balance = Double.parseDouble(accountDetailsPage.getBalance().substring(1));
+        testContext.scenarioContext.setContext(Context.BALANCE, balance);
         Assert.assertTrue(Double.parseDouble(accountDetailsPage.getBalance().substring(1)) > 0);
 
-        this.accountNo = accountDetailsPage.getAccountNo();
+        String accountNo = accountDetailsPage.getAccountNo();
+        testContext.scenarioContext.setContext(Context.ACCOUNT_NUMBER, accountNo);
 
         //
         System.out.println(accountNo);

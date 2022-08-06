@@ -10,7 +10,12 @@ Feature: Bill Payment Service
     When  User pays bill
     # payeename | Address | City | State | ZipCode | PhoneNo | Account | AccountVerify | Amount | From Account Index
     | John | Street | SomeCity | InSomeState | 1234 | 12345 | 123456 | 123456 | 00.12 | 0 |
-    Then Correct amount is deducted from correct account
+    Then User should be navigated to the Bill Payment Complete page stating the correct amount and accountnumber
+
+
+
+
+    #Correct amount is deducted from correct account
 
    #User receives a payment complete message
     # AND The transaction is in transaction overview

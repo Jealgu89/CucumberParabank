@@ -25,6 +25,8 @@ public WebElement linkToFirstAccount;
     public WebElement balanceFirstAccount;
 
 
+
+
 public AccountsOverviewPage(WebDriver driver) {
     this.driver = driver;
     PageFactory.initElements(driver, this);}
@@ -50,6 +52,8 @@ public AccountsOverviewPage(WebDriver driver) {
     linkToFirstAccount.click();
 
     }
+
+
 
 
 

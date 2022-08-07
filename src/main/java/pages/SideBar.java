@@ -20,6 +20,9 @@ public class SideBar {
     @FindBy(how = How.CSS, using = "#leftPanel > ul > li:nth-child(4) > a")
     private WebElement payBillLink;
 
+    @FindBy(how = How.CSS, using = "#leftPanel > ul > li:nth-child(2) > a")
+    private WebElement accountsOverviewLink;
+
     public SideBar(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -36,6 +39,13 @@ public class SideBar {
 
         payBillLink.click();
 
+    }
+
+    public void clickAccountsOverviewPage() {
+
+        accountsOverviewLink.click();
 
     }
+
+
 }

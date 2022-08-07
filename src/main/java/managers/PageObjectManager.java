@@ -30,6 +30,8 @@ public class PageObjectManager {
 
     private BillPaymentCompletePage billPaymentCompletePage;
 
+    private SideBar sideBar;
+
 
     public PageObjectManager(WebDriver driver) {
         this.driver = driver;
@@ -81,6 +83,11 @@ public class PageObjectManager {
 
         return (billPaymentCompletePage == null) ? billPaymentCompletePage = new BillPaymentCompletePage(driver) : billPaymentCompletePage;
 
+    }
+
+    public SideBar getSideBar(){
+
+        return (sideBar == null) ? sideBar = new SideBar(driver) : sideBar;
     }
 
 

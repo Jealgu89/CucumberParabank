@@ -1,7 +1,9 @@
 package Steps;
 
+import context.ScenarioContext;
 import context.TestContext;
 import enums.Context;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,15 +12,17 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import pages.AccountDetailsPage;
 import pages.AccountsOverviewPage;
+import pages.SideBar;
 
 public class AccountSteps {
 
     TestContext testContext;
     AccountDetailsPage accountDetailsPage;
     AccountsOverviewPage accountOverviewPage;
+    SideBar sideBar;
+    ScenarioContext scenarioContext;
 
     Double balance;
-    String accountNo;
 
 
     public AccountSteps(TestContext context) {
@@ -26,6 +30,9 @@ public class AccountSteps {
         testContext = context;
         accountDetailsPage = testContext.getPageObjectManager().getAccountDetailsPage();
         accountOverviewPage = testContext.getPageObjectManager().getAccountsOverviewPage();
+        sideBar = testContext.getPageObjectManager().getSideBar();
+        scenarioContext = testContext.getScenarioContext();
+
     }
 
     @Given("User has a positive amount on her account")
@@ -38,9 +45,9 @@ public class AccountSteps {
         Thread.sleep(1000);
         System.out.println(accountDetailsPage.getBalance());
 
-        Double balance = Double.parseDouble(accountDetailsPage.getBalance().substring(1));
+        Double balance = accountDetailsPage.getBalance();
         testContext.scenarioContext.setContext(Context.BALANCE, balance);
-        Assert.assertTrue(Double.parseDouble(accountDetailsPage.getBalance().substring(1)) > 0);
+        Assert.assertTrue(accountDetailsPage.getBalance() > 0);
 
         String accountNo = accountDetailsPage.getAccountNo();
         testContext.scenarioContext.setContext(Context.ACCOUNT_NUMBER, accountNo);
@@ -67,4 +74,20 @@ public class AccountSteps {
         return balance;
     }
 
+    @And("The transaction is correctly processed in the account details")
+    public void theAmountIsCorrectlyDeductedFromTheCorrectAccount() throws InterruptedException {
+        sideBar.clickAccountsOverviewPage();
+        accountOverviewPage.clickLinkToFirstAccount();
+        Double expNewBalance = testContext.scenarioContext.getContext(Context.BALANCE) - Double.parseDouble(testContext.scenarioContext.getContext(Context.AMOUNT);
+
+
+        Assert.assertEquals(accountDetailsPage.getBalance(), expNewBalance);
+
+
+
+//////////////////////////////////// getContext from scenarioContext return object should be Double or STring..........
+
+
+
+    }
 }

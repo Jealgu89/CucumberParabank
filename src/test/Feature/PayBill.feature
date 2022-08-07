@@ -9,8 +9,9 @@ Feature: Bill Payment Service
     And   User has a positive amount on her account
     When  User pays bill
     # payeename | Address | City | State | ZipCode | PhoneNo | Account | AccountVerify | Amount | From Account Index
-    | John | Street | SomeCity | InSomeState | 1234 | 12345 | 123456 | 123456 | 00.12 | 0 |
+    | John | Street | SomeCity | InSomeState | 1234 | 12345 | 123456 | 123456 | 0.13 | 0 |
     Then User should be navigated to the Bill Payment Complete page stating the correct amount and accountnumber
+    And The transaction is correctly processed in the account details
 
 
 

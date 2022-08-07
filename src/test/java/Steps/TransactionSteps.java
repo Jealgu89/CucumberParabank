@@ -40,6 +40,7 @@ public class TransactionSteps {
         System.out.println(testContext.scenarioContext.getContext(Context.BALANCE));
         payBillPage.enterBillInfo(billInfo);
         List<List<String>> data = billInfo.cells();
+        System.out.println(data.get(0).get(8));
         testContext.scenarioContext.setContext(Context.AMOUNT, data.get(0).get(8));
 
 
@@ -47,18 +48,16 @@ public class TransactionSteps {
     }
 
 
-    @Then("Correct amount is deducted from correct account")
-    public void correctAmountIsDeductedFromCorrectAccount() {
-        //do scenariocontext thing.
 
 
-    }
+
 
     @Then("User should be navigated to the Bill Payment Complete page stating the correct amount and accountnumber")
-    public void checkBillPaymentCompletePageContent() {
-
-        Assert.assertEquals(scenarioContext.getContext(Context.AMOUNT), billPaymentCompletePage.getAmount().substring(1));
-        Assert.assertEquals(scenarioContext.getContext(Context.ACCOUNT_NUMBER), billPaymentCompletePage.getAccountID());
+    public void checkBillPaymentCompletePageContent() throws InterruptedException {
+        Thread.sleep(500);
+        //System.out.println(scenarioContext.getContext(Context.AMOUNT));
+        Assert.assertEquals(testContext.scenarioContext.getContext(Context.AMOUNT), billPaymentCompletePage.getAmount().substring(1));
+        Assert.assertEquals(testContext.scenarioContext.getContext(Context.ACCOUNT_NUMBER), billPaymentCompletePage.getAccountID());
 
 
 

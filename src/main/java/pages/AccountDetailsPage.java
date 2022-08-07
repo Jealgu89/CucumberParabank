@@ -35,10 +35,9 @@ public class AccountDetailsPage {
 
     }
 
-    public String getBalance () throws InterruptedException {
+    public Double getBalance () throws InterruptedException {
 
-
-      return balance.getText();
+      return Double.parseDouble(balance.getText().substring(1));
     }
 
     public void clickPayBillLink(){

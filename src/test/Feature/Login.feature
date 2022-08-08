@@ -23,7 +23,7 @@ Feature: Login
   @SomeTests
   Scenario: Succesfull login
   Given I am on the login page of the Para Bank Application
-    When I enter valid credentials "testUser1" and "password"
+    When I enter valid credentials "testUser" and "password"
     Then I should be taken to the overview page
 
 

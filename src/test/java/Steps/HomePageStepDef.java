@@ -1,13 +1,10 @@
 package Steps;
 
 import context.TestContext;
-import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import managers.PageObjectManager;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 
 
@@ -47,11 +44,9 @@ public class HomePageStepDef {
     public void iAmOnTheRegisterPageOfTheParaBankApplication() {
 
 
-        //driver.findElement(By.cssSelector("#loginPanel > p:nth-child(3) > a")).click();
-        //homePage = pageObjectManager.getHomePage();
+
         homePage.clickRegistration();
 
-        //driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[1]/div/p[2]/a")).click();
 
 
     }
@@ -70,7 +65,7 @@ public class HomePageStepDef {
 
     @Then("I should get an appropriate error message")
     public void iShouldGetAnAppropriateErrorMessage() {
-       // homePage = pageObjectManager.getHomePage();
+
         homePage.getLoginErrorMessage();
         Assert.assertEquals("The username and password could not be verified.", homePage.getLoginErrorMessage());
 
@@ -81,7 +76,6 @@ public class HomePageStepDef {
     public void userNavigatedToOpenNewAccountPageAfterLoggingInWithAnd(String username, String password) throws InterruptedException {
         homePage.logIn(username, password);
         homePage.navigateToOpenNewAccountPage();
-
 
 
     }

@@ -10,4 +10,3 @@ Feature: Registration
     | Jesse | The Tester | Street | City | State | 12345 | 12345 | 12345 | testUser | password | password |
 
     Then I should be taken to the accounts overview page for newly created account
-#customer\.phoneNumber

@@ -45,7 +45,7 @@ public class AccountSteps {
         Thread.sleep(1000);
         System.out.println(accountDetailsPage.getBalance());
 
-        Double balance = accountDetailsPage.getBalance();
+        double balance = accountDetailsPage.getBalance();
         testContext.scenarioContext.setContext(Context.BALANCE, balance);
         Assert.assertTrue(accountDetailsPage.getBalance() > 0);
 
@@ -69,7 +69,7 @@ public class AccountSteps {
 
     }
 
-    public Double getBalance(){
+    public double getBalance(){
 
         return balance;
     }
@@ -78,14 +78,16 @@ public class AccountSteps {
     public void theAmountIsCorrectlyDeductedFromTheCorrectAccount() throws InterruptedException {
         sideBar.clickAccountsOverviewPage();
         accountOverviewPage.clickLinkToFirstAccount();
-        Double expNewBalance = testContext.scenarioContext.getContext(Context.BALANCE) - Double.parseDouble(testContext.scenarioContext.getContext(Context.AMOUNT);
+
+        Thread.sleep(500);
+        double oldBalance = Double.parseDouble(testContext.scenarioContext.getContext(Context.BALANCE).toString());
+        double amount = Double.parseDouble(testContext.scenarioContext.getContext(Context.AMOUNT).toString());
+        double expNewBalance = oldBalance - amount;
+
+       Assert.assertEquals(expNewBalance, accountDetailsPage.getBalance(), 0);
 
 
-        Assert.assertEquals(accountDetailsPage.getBalance(), expNewBalance);
 
-
-
-//////////////////////////////////// getContext from scenarioContext return object should be Double or STring..........
 
 
 

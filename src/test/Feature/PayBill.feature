@@ -15,13 +15,3 @@ Feature: Bill Payment Service
 
 
 
-
-    #Correct amount is deducted from correct account
-
-   #User receives a payment complete message
-    # AND The transaction is in transaction overview
-    # AND The amount is correctly deducted from account balance
-
-    # and: save amount, save account no.Feature
-    # when: use account no from previous step
-    # then: use amount saved in step one, to calculate new total

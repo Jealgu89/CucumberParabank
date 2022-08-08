@@ -20,7 +20,9 @@ public class ScenarioContext {
     public void setContext(Context key, Object value) {
         scenarioContext.put(key.toString(), value);
     }
-        public Object getContext(Context key) {
+
+
+    public Object getContext(Context key) {
             return scenarioContext.get(key.toString());
 
         }

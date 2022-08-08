@@ -1,19 +1,14 @@
 package Steps;
 
 import context.TestContext;
-import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.Then;
-import managers.PageObjectManager;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import pages.NewAccountOpenedPage;
 
 public class NewAccountOpenedPageSteps {
 
-    WebDriver driver;
+
     TestContext testContext;
-    PageObjectManager pageObjectManager;
-    ConfigFileReader configFileReader;
     NewAccountOpenedPage newAccountOpenedPage;
 
 
@@ -27,9 +22,9 @@ public class NewAccountOpenedPageSteps {
 
 
     @Then("User is on page stating that account is created with link to account")
-    public void userIsOnPageStatingThatAccountIsCreatedWithLinkToAccount() {
+    public void userIsOnPageStatingThatAccountIsCreatedWithLinkToAccount() throws InterruptedException {
 
-
+        Thread.sleep(500);
         String pageTitleText = newAccountOpenedPage.getPageTitleText();
         Assert.assertEquals("Congratulations, your account is now open.", pageTitleText);
         String accountId = newAccountOpenedPage.getAccountIdFromLink();

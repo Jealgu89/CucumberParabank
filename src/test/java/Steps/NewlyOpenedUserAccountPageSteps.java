@@ -1,19 +1,14 @@
 package Steps;
 
 import context.TestContext;
-import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.Then;
-import managers.PageObjectManager;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import pages.NewUserAccountOpenedPage;
 
 
 public class NewlyOpenedUserAccountPageSteps {
 
-    WebDriver driver;
-    ConfigFileReader configFileReader;
-    PageObjectManager pageObjectManager;
+
 
     NewUserAccountOpenedPage newAccountOpenedPage;
     TestContext testContext;

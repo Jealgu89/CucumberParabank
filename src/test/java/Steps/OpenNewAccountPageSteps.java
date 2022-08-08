@@ -9,10 +9,8 @@ import pages.OpenNewAccountPage;
 
 public class OpenNewAccountPageSteps {
 
-    WebDriver driver;
+
     TestContext testContext;
-    PageObjectManager pageObjectManager;
-    ConfigFileReader configFileReader;
     OpenNewAccountPage openNewAccountPage;
 
     public OpenNewAccountPageSteps(TestContext context) {
@@ -24,9 +22,9 @@ public class OpenNewAccountPageSteps {
     }
 
     @When("A request a new {string} account and transfer funds to it from existing account {string}")
-    public void aRequestANewAccountAndTransferFundsToItFromExistingAccount(String accountType, String accountIndex) {
+    public void aRequestANewAccountAndTransferFundsToItFromExistingAccount(String accountType, String accountIndex) throws InterruptedException {
 
-
+        Thread.sleep(500);
         openNewAccountPage.selectFromDropDown(accountType);
         Integer accountIndexInteger = Integer.parseInt(accountIndex);
         openNewAccountPage.selectFromAccountNoDropDown(accountIndexInteger);
@@ -34,11 +32,5 @@ public class OpenNewAccountPageSteps {
 
 
     }
-
-
-
-
-
-
 
 }

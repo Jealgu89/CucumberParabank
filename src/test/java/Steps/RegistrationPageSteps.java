@@ -13,9 +13,7 @@ import java.util.List;
 
 public class RegistrationPageSteps {
 
-    WebDriver driver;
-    ConfigFileReader configFileReader;
-    PageObjectManager pageObjectManager;
+
     RegistrationPage registrationPage;
     TestContext testContext;
 
@@ -46,8 +44,5 @@ public class RegistrationPageSteps {
 
 
     }
-
-
-
 
 }

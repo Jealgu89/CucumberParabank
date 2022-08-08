@@ -7,7 +7,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import pages.AccountDetailsPage;
 import pages.BillPaymentCompletePage;
 import pages.PayBillPage;
@@ -20,7 +19,7 @@ public class TransactionSteps {
     AccountDetailsPage accountDetailsPage;
     PayBillPage payBillPage;
     BillPaymentCompletePage billPaymentCompletePage;
-    ScenarioContext scenarioContext;
+
 
 
     public TransactionSteps(TestContext context){
@@ -28,7 +27,7 @@ public class TransactionSteps {
         accountDetailsPage = testContext.getPageObjectManager().getAccountDetailsPage();
         payBillPage = testContext.getPageObjectManager().getPayBillPage();
         billPaymentCompletePage = testContext.getPageObjectManager().getBillPaymentCompletePage();
-        ScenarioContext scenarioContext = testContext.getScenarioContext();
+
 
 
     }

@@ -7,16 +7,14 @@ Feature: Create a new account
 
   Scenario Outline: create a new account
     Given User navigated to open new Account Page after logging in with "<username>" and "<password>"
-
     When A request a new "<account type>" account and transfer funds to it from existing account "<account index>"
     Then User is on page stating that account is created with link to account
     Examples:
       | account type | account index | username | password |
-      | CHECKING    | 0 | testUser12  | password |
-      | SAVINGS     | 0 | testUser12 | password |
+      | CHECKING    | 0 | testUser  | password |
+      | SAVINGS     | 0 | testUser | password |
 
 
 
-# same scenario with datatable with map
 
 

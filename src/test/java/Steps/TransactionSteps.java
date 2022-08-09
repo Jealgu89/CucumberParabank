@@ -37,7 +37,8 @@ public class TransactionSteps {
 
         accountDetailsPage.clickPayBillLink();
         System.out.println(testContext.scenarioContext.getContext(Context.BALANCE));
-        payBillPage.enterBillInfo(billInfo);
+        String accountNo = testContext.scenarioContext.getContext(Context.ACCOUNT_NUMBER).toString();
+        payBillPage.enterBillInfo(billInfo, accountNo);
         List<List<String>> data = billInfo.cells();
         System.out.println(data.get(0).get(8));
         testContext.scenarioContext.setContext(Context.AMOUNT, data.get(0).get(8));

@@ -114,12 +114,12 @@ public class PayBillPage {
 
     private Select getAccountDropDown() {return new Select(fromAccountDropDown);}
 
-    public void setAccount(Integer accountIndex){
-        getAccountDropDown().selectByIndex(accountIndex);
+    public void setAccount(String accountNo){
+        getAccountDropDown().selectByVisibleText(accountNo);
 
     }
 
-    public void enterBillInfo(DataTable billInfo) {
+    public void enterBillInfo(DataTable billInfo, String accountNo) {
 
 
         List<List<String>> data = billInfo.cells();
@@ -133,8 +133,8 @@ public class PayBillPage {
         registerAccount(data.get(0).get(6));
         registerVerifyAccount(data.get(0).get(7));
         registerAmount(data.get(0).get(8));
-        Integer accountFromIndex = Integer.parseInt(data.get(0).get(9));
-        setAccount(accountFromIndex);
+
+        setAccount(accountNo);
         sendPaymentButton.click();
 
         this.amount = Double.parseDouble(data.get(0).get(8));

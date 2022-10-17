@@ -6,7 +6,7 @@ So far I created four feature files and created stepdefinitions to execute test.
 
 Things I like to add or improve when I have time:
 * Investigate reporting options
-* Investigate the option to make printscreen in casd of errors/findings
+* Investigate the option to make printscreen in case of errors/findings
 * Add some test in which I use Rest Assured to check some information via HTTP call.
 * Expand the amount of testcases and make existing testcases more detailed
 * Try to let the tests run stable after removing some of the Thread.sleeps I put into the code.
